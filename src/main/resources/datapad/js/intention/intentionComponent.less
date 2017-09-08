@@ -1,0 +1,215 @@
+.intention-component {
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+
+  &_label {
+    padding: 0;
+    font-weight: 900;
+  }
+
+  &_multi-select {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &_checkbox {
+      outline: none;
+
+      &-label {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    }
+
+    &_checkbox-row {
+      margin: 5px;
+    }
+
+    &_items-container {
+      height: 150px;
+      overflow: auto;
+      width: 150px;
+      border: 1px solid gray;
+      margin: 5px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    &_column-container {
+      height: 100%;
+    }
+
+    &_columns-layout {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+    }
+
+    &_columns-layout-overlay {
+      background-color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: .6;
+      z-index: 1;
+    }
+
+    &_buttons-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & &_move-button {
+      margin: 10px 0;
+    }
+
+    &_item {
+      padding: 0 5px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      cursor: default;
+      outline: none;
+
+      &.focused {
+        background-color: rgba(0, 100, 255, .4);
+      }
+    }
+  }
+
+  &_dropdown {
+
+    &_input {
+      padding: 0 15px;
+      width: 100%;
+      height: 100%;
+      line-height: 1.5em;
+      border: 0;
+      margin-left: -15px;
+
+      &:focus {
+        box-shadow: 0 0 1px 1px #428bca;
+      }
+    }
+
+    &_toggler {
+      cursor: pointer;
+      white-space: nowrap;
+      border: 1px solid transparent;
+      position: relative;
+
+      &.focused {
+        border: 1px dotted grey;
+      }
+
+      &&_nothing-selected {
+        color: #bbb;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 5px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+        border: solid black;
+        border-width: 0 1px 1px 0;
+        width: 5px;
+        height: 5px;
+      }
+    }
+
+    &_toggler-text {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: -1px;
+    }
+
+    &_toggler-text-label {
+      flex-grow: 100;
+      text-align: center;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    &_clear-selection-button {
+      font-size: 9px;
+      padding: 0;
+
+      &:hover {
+        background-color: #dddddd;
+      }
+    }
+
+    &_list {
+      position: absolute;
+      padding: 0;
+      list-style: none;
+      z-index: 1;
+      max-height: 250px;
+      overflow: auto;
+      top: 100%;
+      right: 0;
+    }
+
+    &_item:hover {
+      background: initial;
+    }
+  }
+
+  &_text-box {
+
+    &_container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &_input {
+      cursor: text;
+      width: 100%;
+
+      &.focused {
+        border: 1px dotted black;
+      }
+    }
+
+    &_validation-message {
+      color: red;
+      font-size: 9px;
+    }
+  }
+
+  &_dropdown_toggler, &_text-box_container, &_text-box_input {
+    height: 1.5em;
+    line-height: 1.5em;
+  }
+
+  &_dropdown_toggler, &_text-box_container {
+    width: 180px;
+    margin: 0 0 0 10px;
+  }
+
+  & &_dropdown_toggler, & &_text-box_input {
+    padding: 0 15px;
+    box-sizing: border-box;
+  }
+
+  &_single-component &_dropdown_toggler, &_single-component &_text-box_container {
+    width: 100%;
+    margin: 0;
+    max-width: 208px;
+  }
+
+}

@@ -1,0 +1,283 @@
+@PADDING: 9px;
+
+.button {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 100px;
+  padding: @PADDING 20px;
+  margin: 0 4px;
+
+  border: none;
+  border-radius: 2px;
+
+  background: transparent;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.15);
+
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+
+  transition: background .1s ease-out;
+
+  user-select: none;
+
+
+  &:hover &_label {
+    opacity: .9;
+  }
+
+  &:active &_label {
+    opacity: 1;
+  }
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  &_label {
+    opacity: 0.8;
+    transition: opacity .1s ease-out;
+  }
+
+  &_icon {
+    width: @ICON_SIZE;
+    height: @ICON_SIZE;
+  }
+
+  &-checked {
+
+  }
+
+  /* button-sizes */
+
+  &&-size-xs {
+    min-width: initial;
+    padding: 5px;
+    margin: 0 2px;
+  }
+
+  &&-size-xs &_icon {
+    width: @ICON_SIZE_S;
+    height: @ICON_SIZE_S;
+  }
+
+  &&-size-s {
+    min-width: initial;
+    padding: 3px 8px;
+    margin: 0 2px;
+  }
+
+  &&-size-xl {
+    font: @FONT_H2;
+    padding: 20px 36px;
+  }
+
+  &&-size-l &_icon {
+    width: @ICON_SIZE_L;
+    height: @ICON_SIZE_L;
+  }
+
+  /* button action */
+
+  &-type-action {
+    background: @BUTTON_ACTION;
+    color: #fff;
+  }
+
+  &-type-action:hover {
+    background: @BUTTON_ACTION_HOVER;
+  }
+
+  &-type-action:active {
+    background: @BUTTON_ACTION_ACTIVE;
+  }
+
+  &-type-action[disabled] {
+    background: @BUTTON_ACTION;
+  }
+
+  /* button-icon */
+
+  &-type-icon {
+    border: none;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .15s ease-out;
+    background: transparent;
+  }
+
+  &-type-icon:hover,
+  &-type-icon:active {
+    background: transparent;
+    opacity: 1;
+  }
+
+  &-type-icon:disabled,
+  &-type-icon:hover&-type-icon:disabled,
+  &-type-icon:active&-type-icon:disabled {
+    background: transparent;
+    opacity: 0.5;
+  }
+
+  /* button-text */
+
+  &-type-text {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: @FOREGROUND_PALE;
+    min-width: auto;
+  }
+
+  &-type-text&-type-action {
+    color: @COLOR_ACTION;
+  }
+
+  /* button-tab */
+
+  &-type-tag {
+    background: #fff;
+
+    border: 1px solid @BORDER;
+    border-radius: 25px;
+
+    box-shadow: none;
+    -webkit-box-shadow: none;
+  }
+
+  .focused&-type-tag {
+    border-color: @COLOR_ACTION_MUTED;
+  }
+
+  &-type-tag:hover {
+    background-color: @BACKGROUND;
+  }
+
+  /* button-link */
+
+  &-type-link {
+    border: none;
+    min-width: auto;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+    color: @FOREGROUND_ACTION;
+    cursor: pointer;
+  }
+
+  &-type-link:hover {
+    text-decoration: underline;
+  }
+
+  /* button round */
+
+  &-type-round {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: @PADDING;
+    min-width: 0;
+
+    border: 1px solid @COLOR_DARK;
+    border-radius: 25px;
+
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    transition: all .2s ease-out;
+  }
+
+  &-type-round:hover {
+    background: @BACKGROUND;
+  }
+
+  &-type-round &_label {
+    flex-grow: 1;
+    padding-right: 16px;
+    padding-left: 8px;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+
+  &-type-round &_label:first-child {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  &-type-round&-type-volume {
+    border: 1px solid transparent;
+  }
+
+  &-type-round&-checked,
+  &-type-round&-checked:hover {
+    border: 1px solid @COLOR_ACTION;
+    background: white;
+    box-shadow: none;
+  }
+
+  &-type-round&-size-s {
+    padding: 6px;
+    border-width: 1px;
+  }
+
+  &-type-round&-size-s &_label {
+    font-size: @FONT_SIZE_H5;
+    line-height: 16px;
+  }
+
+  /* button positive */
+
+  &-type-positive {
+    background: @COLOR_POSITIVE;
+    border-color: @COLOR_POSITIVE;
+    color: @FOREGROUND_LIGHT;
+  }
+
+  &-type-positive:hover {
+    box-shadow: none;
+    background: @COLOR_POSITIVE_DARK;
+    border-color: @COLOR_POSITIVE_DARK;
+  }
+
+  /* button dark */
+
+  &-type-dark {
+    background: @COLOR_DARK;
+    border-color: @COLOR_DARK;
+    color: @FOREGROUND_LIGHT;
+  }
+
+  /* button light */
+
+  &-type-light {
+    border-color: @BORDER_LIGHT;
+    color: @FOREGROUND_LIGHT;
+  }
+
+  /* important button */
+
+  &-type-important {
+    background: @IMPORTANT;
+    color: #fff;
+  }
+
+  /* button with shadow */
+
+  &-type-volume {
+    box-shadow: 0 2px 6px rgba(0,0,0,.4);
+    border: none;
+    background: white;
+  }
+
+  &-type-volume:hover {
+    background: @BACKGROUND;
+  }
+}

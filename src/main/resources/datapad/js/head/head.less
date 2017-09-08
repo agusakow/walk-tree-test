@@ -1,0 +1,31 @@
+.head {
+
+  @MARGIN_EDGE: 15px;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  display: flex;
+  width: 100%;
+
+  border-radius: 0;
+  margin-bottom: 0;
+  background: @BACKGROUND_DARK;
+
+  align-items: center;
+
+  /* logo */
+
+  &_logo {
+    width: 48px;
+    min-width: 48px;
+    height: @HEAD_HEIGHT;
+    margin: 0 @MARGIN_EDGE;
+    background-image: url('/logo.ico');
+    background-position: center;
+    background-size: 48px 48px;
+    background-repeat: no-repeat;
+  }
+}

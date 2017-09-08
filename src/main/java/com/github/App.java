@@ -6,7 +6,9 @@ import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 
 public class App {
 
@@ -18,11 +20,17 @@ public class App {
     String baseDir = new File(".").getAbsolutePath();
     Imports imports = new Imports();
     try {
-      imports.findFiles(Arrays.asList(
-          new GlobPattern(baseDir, "**/*.java")
+      List<Path> paths = imports.findFiles(Arrays.asList(
+          new GlobPattern(baseDir, "**/*.less")
       ));
+      logger.info("-- FINAL FILES LIST --");
+      paths.forEach(path -> {
+        logger.info(path);
+      });
     } catch (IOException e) {
       e.printStackTrace();
     }
+
+
   }
 }

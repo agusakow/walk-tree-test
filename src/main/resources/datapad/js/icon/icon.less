@@ -1,0 +1,344 @@
+@icon_path: "/assets/icon/";
+
+.icon {
+  display: inline-block;
+  width: @ICON_SIZE;
+  height: @ICON_SIZE;
+  background: no-repeat center;
+  background-size: contain;
+
+  &-size-xs {
+    width: @ICON_SIZE_XS;
+    height: @ICON_SIZE_XS;
+  }
+
+  &-size-s {
+    width: @ICON_SIZE_S;
+    height: @ICON_SIZE_S;
+  }
+
+  &-size-l {
+    width: @ICON_SIZE_L;
+    height: @ICON_SIZE_L;
+  }
+
+  &-size-xl {
+    width: @ICON_SIZE_XL;
+    height: @ICON_SIZE_XL;
+  }
+
+  &-document {
+    .bg("document");
+  }
+
+  &-document&-light {
+    .bg("document-light");
+  }
+
+  &-document-open {
+    .bg("document-open");
+  }
+
+  &-document&-dark {
+    .bg("document-dark");
+  }
+
+  &-folder {
+    .bg("folder");
+  }
+
+  &-folder&-light {
+    .bg("folder-light");
+  }
+
+  &-folder-open {
+    .bg("folder-open");
+  }
+
+  &-folder-open&-dark {
+    .bg("folder-open-dark");
+  }
+
+  &-folder-open&-light {
+    .bg("folder-open-light");
+  }
+
+  &-edit {
+    .bg("edit");
+  }
+
+  &-pin {
+    .bg("pin");
+  }
+
+  &-report {
+    .bg("menu-reports");
+  }
+
+  &-unpin {
+    .bg("unpin");
+  }
+
+  &-open {
+    .bg("open");
+  }
+
+  &-invite {
+    .bg("share");
+  }
+
+  &-share&-light {
+    .bg("share-light");
+  }
+
+  &-clone {
+    .bg("clone");
+  }
+
+  &-trash {
+    .bg("trash");
+  }
+
+  &-add&-light {
+    .bg("add-light");
+  }
+
+  &-add&-positive {
+    .bg("add-positive");
+  }
+
+  &-close {
+    .bg("close");
+  }
+
+  &-close&-light {
+    .bg("close-light");
+  }
+
+  &-caret {
+    .bg("caret");
+  }
+
+  &-caret&-light {
+    .bg("caret-light");
+  }
+
+  &-public {
+    .bg("public");
+  }
+
+  &-project {
+    .bg("project");
+  }
+
+  &-squares {
+    .bg("squares");
+  }
+
+  &-squares&-inactive {
+    .bg("squares-inactive");
+  }
+
+  &-lines {
+    .bg("lines");
+  }
+
+  &-lines&-inactive {
+    .bg("lines-inactive");
+  }
+
+  &-cloud {
+    .bg("cloud");
+  }
+
+  &-export {
+    .bg("export");
+  }
+
+  &-import {
+    .bg("import");
+  }
+
+  &-files {
+    .bg("files");
+  }
+
+  &-checkpoint {
+    .bg("checkpoint");
+  }
+
+  &-calendar {
+    .bg("calendar");
+  }
+
+  &-pie {
+    .bg("pie");
+  }
+
+  &-refresh {
+    .bg("refresh");
+  }
+
+  &-attention {
+    .bg("attention");
+  }
+
+  &-attention&-inactive {
+    .bg("attention-inactive");
+  }
+
+  &-attention-red {
+    .bg("attention-red");
+  }
+
+  &-question&-light {
+    .bg("question-light");
+  }
+
+  &-dots&-light {
+    .bg("dots-light");
+  }
+
+  &-menu&-positive {
+    .bg("menu-positive");
+  }
+
+  &-sidebar {
+    .bg("menu-sidebar");
+
+    &:hover {
+      .filter(hue-rotate(-55deg) saturate(5));
+    }
+
+    .is-active & {
+      .bg("menu-sidebar-active");
+    }
+  }
+
+  &-reports {
+    .bg("menu-reports");
+  }
+
+  &-side-panel {
+    .bg("side-panel");
+  }
+
+  &-side-panel&-inactive {
+    .bg("side-panel-inactive");
+  }
+
+  &-star {
+    .bg("star");
+  }
+
+  &-fav {
+    .bg("fav-ribbon-black");
+  }
+
+  &-fav.is-on {
+    .bg("fav-ribbon-black-active");
+  }
+
+  &-fav-ribbon {
+    .bg("fav-ribbon");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 12px;
+    height: 20px;
+    margin-right: 5px;
+    position: relative;
+    top: 5px;
+
+    &.is-on {
+      .bg("fav-ribbon-active");
+    }
+  }
+
+  &-star&-inactive {
+    .bg("star-inactive");
+  }
+
+  &-star&-light {
+    .bg("star-light");
+  }
+
+  &-star&-light&-inactive {
+    .bg("star-inactive-light");
+  }
+
+  &-recent {
+    .bg("recent")
+  }
+
+  &-in-folder {
+    .bg("in-folder")
+  }
+
+  &-repo-broken {
+    .bg("repo-broken")
+  }
+
+  &-repo-broken&-light {
+    .bg("repo-broken-light")
+  }
+
+  &-play {
+    .bg("play")
+  }
+
+  &-gear {
+    .bg("gear")
+  }
+
+  &-gear-run {
+    .bg("gear-run")
+  }
+
+  &_preload {
+    @pos: no-repeat -9999px -9999px;
+    width: 0px;
+    height: 0px;
+    background: url("@{icon_path}document.svg") @pos,
+    url("@{icon_path}document-light.svg") @pos,
+    url("@{icon_path}document-open.svg") @pos,
+    url("@{icon_path}document-dark.svg") @pos,
+    url("@{icon_path}folder.svg") @pos,
+    url("@{icon_path}folder-open.svg") @pos,
+    url("@{icon_path}folder-light.svg") @pos,
+    url("@{icon_path}folder-open-light.svg") @pos,
+    url("@{icon_path}folder-open-dark.svg") @pos,
+    url("@{icon_path}open.svg") @pos,
+    url("@{icon_path}clone.svg") @pos,
+    url("@{icon_path}edit.svg") @pos,
+    url("@{icon_path}share.svg") @pos,
+    url("@{icon_path}share-light.svg") @pos,
+    url("@{icon_path}trash.svg") @pos,
+    url("@{icon_path}add-positive.svg") @pos,
+    url("@{icon_path}add-light.svg") @pos,
+    url("@{icon_path}caret.svg") @pos,
+    url("@{icon_path}caret-light.svg") @pos,
+    url("@{icon_path}squares.svg") @pos,
+    url("@{icon_path}squares-inactive.svg") @pos,
+    url("@{icon_path}lines.svg") @pos,
+    url("@{icon_path}lines-inactive.svg") @pos,
+    url("@{icon_path}side-panel.svg") @pos,
+    url("@{icon_path}side-panel-inactive.svg") @pos,
+    url("@{icon_path}star.svg") @pos,
+    url("@{icon_path}star-inactive.svg") @pos,
+    url("@{icon_path}star-light.svg") @pos,
+    url("@{icon_path}star-inactive-light.svg") @pos,
+    url("@{icon_path}recent.svg") @pos,
+    url("@{icon_path}in-folder.svg") @pos,
+    url("@{icon_path}fav-ribbon.svg") @pos,
+    url("@{icon_path}fav-ribbon-active.svg") @pos,
+    url("@{icon_path}menu-positive.svg") @pos,
+    url("@{icon_path}envelope.svg") @pos,
+    url("/logo.ico") @pos;
+  }
+}
+
+.bg(@icon) {
+  background-image: url("@{icon_path}@{icon}.svg");
+}

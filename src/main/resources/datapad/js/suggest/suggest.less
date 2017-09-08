@@ -1,0 +1,32 @@
+.suggest {
+  position: relative;
+  display: inline-block;
+
+  &_input {
+    text-overflow: ellipsis;
+    padding-right: 24px !important;
+    width: 100%;
+  }
+
+  &_popup {
+    position: absolute;
+    min-width: 100%;
+    z-index: 2;
+  }
+
+  &_close,
+  &_arrow {
+    position: absolute !important;
+    right: 8px;
+    top: 10px !important;
+  }
+
+  &_arrow {
+    transform: rotate(180deg);
+    transition: transform .15s ease-out;
+  }
+
+  &-opened &_arrow {
+    transform: rotate(0deg);
+  }
+}

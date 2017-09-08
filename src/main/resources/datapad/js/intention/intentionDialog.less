@@ -1,0 +1,92 @@
+.intention-dialog {
+
+  &_dropdown {
+    padding: 10px;
+    min-width: 200px;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  &_title {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+    text-align: center;
+  }
+
+  &_content {
+    outline: none;
+    margin: 0 0 10px;
+
+    .multi-step-intention & {
+      border: 1px solid @BACKGROUND_PALE;
+    }
+  }
+
+  &_footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  &_confirm-button.focused {
+    border: 1px solid #bbb;
+  }
+
+  &_cancel-button {
+    margin-right: 0;
+
+    &.focused {
+      border: 1px dotted grey;
+    }
+  }
+
+  &_confirm-button, &_cancel-button {
+    border: 1px solid transparent;
+  }
+
+  &_page-nav {
+    display: flex;
+    flex-direction: row;
+    margin: 0 0 -1px;
+    justify-content: flex-start;
+
+    &-tab {
+      position: relative;
+      padding: 2px 10px;
+      margin: 0;
+      background: @BACKGROUND_PALE;
+      border: 1px solid @BACKGROUND_PALE;
+      cursor: pointer;
+
+      &.active-step {
+        background: white !important;
+        border-bottom-color: white !important;
+        font-weight: 900;
+      }
+
+      &:hover {
+        background: @BORDER;
+        border-bottom-color: @BORDER;
+      }
+
+      &.completed {
+        &::before {
+          color: green;
+        }
+      }
+
+      &::before {
+        content: '\2713';
+        color: @FOREGROUND_MUTED;
+        margin-right: 1px;
+      }
+
+    }
+
+  }
+
+}

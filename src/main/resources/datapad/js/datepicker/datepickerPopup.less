@@ -1,0 +1,81 @@
+@ITEM_SIZE: 40px;
+
+.datepicker-popup {
+
+  &_content {
+    user-select: none;
+  }
+
+  &_bar {
+    padding: 0 3px 15px;
+  }
+
+  &_calendar {
+    width: @ITEM_SIZE * 7;
+    height: @ITEM_SIZE * 6;
+  }
+
+  &_calendar,
+  &_weekdays {
+    padding: 0 10px;
+  }
+
+  &_day,
+  &_weekday {
+    display: inline-block;
+    width: @ITEM_SIZE;
+    height: @ITEM_SIZE;
+
+    line-height: @ITEM_SIZE;
+    text-align: center;
+    vertical-align: top;
+
+    cursor: default;
+  }
+
+  &_day {
+    border-radius: 50%;
+  }
+
+  &_day.selected {
+    background: @COLOR_ACTION;
+    color: @FOREGROUND_LIGHT_2;
+  }
+
+  &_weekday {
+    color: @FOREGROUND_PALE_2;
+  }
+
+  /* header styles */
+
+  &_header {
+    display: flex;
+    background: @COLOR_ACTION;
+    color: @FOREGROUND_LIGHT_2;
+    align-items: center;
+  }
+
+  &_left-arrow {
+    transform: rotate(-90deg);
+  }
+
+  &_right-arrow {
+    transform: rotate(90deg);
+  }
+
+  &_left-arrow,
+  &_right-arrow {
+    display: block;
+    flex-shrink: 0;
+    margin: 8px;
+  }
+
+  &_date {
+    display: block;
+    text-align: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    font: @FONT_H4;
+    line-height: 60px;
+  }
+}

@@ -1,0 +1,43 @@
+.multi-button {
+  &_container {
+    display: inline-block;
+    align-items: center;
+    position: relative;
+  }
+
+  &_expand-button {
+    position: relative;
+    z-index: 1;
+    transition: background .2s linear, border-color .2s linear;
+  }
+
+  &_expand-button .button_label {
+    height: 15px;
+    line-height: 15px;
+    max-width: 150px;
+    overflow: hidden;
+    transition: max-width .2s cubic-bezier(.87, -.41, .19, 1.44), padding .2s cubic-bezier(.87, -.41, .19, 1.44);
+  }
+
+  &_expand-button .icon {
+    flex-shrink: 0;
+    transition: transform .25s linear;
+  }
+
+  &_buttons-container {
+  }
+
+  &_button {
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: 50%;
+    transition: transform .25s cubic-bezier(0.69, -0.3, 0.35, 1.32), opacity .15s ease-in;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  &_button .button {
+    margin: 0;
+  }
+}

@@ -1,0 +1,91 @@
+@INTENTION_BORDER: #e4e9ec;
+
+.intention {
+
+  &-panel {
+    .transition(opacity .2s);
+    margin-bottom: -2px;
+
+    &_dimmed {
+      opacity: .5;
+    }
+  }
+
+  &-tooltip {
+    padding: 2px 6px;
+    max-width: 250px;
+    background-color: rgb(102, 102, 102);
+
+    & hr:not(:last-child) {
+      border-top: 1px dashed white;
+    }
+  }
+
+  &-group-dropdown-button {
+    height: 25px;
+    line-height: 17px;
+    box-shadow: none;
+    background-color: @BACKGROUND_PALE;
+    border: 1px solid @FOREGROUND_PALE;
+    color: black;
+    font-weight: 900;
+
+    &:hover, &.dropdown-opened {
+      background-color: @FOREGROUND_MUTED;
+    }
+  }
+
+  &-button.button {
+    margin: 0 2px;
+    border: 1px solid @INTENTION_BORDER;
+    background: transparent;
+    padding: 3px 6px;
+    height: 25px;
+    line-height: 16px;
+    color: black;
+    box-shadow: none;
+
+    .intention-panel & {
+      margin-bottom: 2px;
+    }
+
+    &.is-next-step {
+      border-color: @COLOR_POSITIVE;
+    }
+
+    &:hover {
+      background-color: @INTENTION_BORDER;
+    }
+
+    &.focused {
+      border-color: @COLOR_ACTION_MUTED;
+
+      &.intention-active {
+        border-color: @COLOR_ACTION_MUTED;
+        background-color: @COLOR_ACTION;
+        color: white;
+      }
+    }
+  }
+
+  &-button-with-caret::after {
+    content: '\2304';
+    margin-left: 2px;
+    font-size: 14px;
+    line-height: 100%;
+  }
+
+  &-active {
+    background-color: @COLOR_ACTION;
+    color: white;
+
+    &.focused {
+      border-color: @COLOR_ACTION;
+    }
+
+    &:hover {
+      background-color: @COLOR_ACTION_MUTED;
+    }
+  }
+
+}

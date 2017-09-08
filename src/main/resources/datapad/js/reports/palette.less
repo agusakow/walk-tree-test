@@ -1,0 +1,80 @@
+.palette {
+
+  &_container {
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    bottom: 20px;
+
+    //height: 400px;
+    max-width: 100px;
+    .calc(max-height, ~'100% - 20px');
+    //outline: 1px solid black;
+
+    .display(flex);
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    .align-content(flex-start);
+
+    z-index: 1000;
+
+     background-color: white;
+    overflow: scroll;
+  }
+
+  &_cell {
+    width: 100px;
+    height: 80px;
+    display: inline-block;
+
+    overflow: hidden;
+    box-sizing: border-box;
+
+    &:empty {
+      .spinner-bg;
+    }
+
+    &:hover {
+      background-color: lightcyan;
+    }
+
+    & &-map-contents {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-image: url("/assets/svg/reports/palette/palette-cell-map.svg");
+      background-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    & &-gog-plot-contents {
+      display: inline-block;
+      background-repeat: no-repeat;
+      //background-image: url("/assets/svg/reports/palette/palette-cell-plot.svg");
+      background-position: -25px center;
+      //background-size: contain;
+
+      width: 100%;
+      height: 100%;
+    }
+
+    & &-table-contents {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-image: url("/assets/svg/reports/palette/palette-cell-table.svg");
+      background-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    & &-plot-contents {
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-image: url("/assets/svg/reports/palette/palette-cell-plot.svg");
+      background-position: center 0px;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+}

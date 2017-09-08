@@ -1,0 +1,119 @@
+@BORDER_ACTIVE_COLOR: @COLOR_ACTION_PALE;
+@BORDER_COLOR: @BORDER;
+
+body {
+  font: @FONT;
+  color: @FOREGROUND;
+  font-weight: 300;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.disabled,
+.disabled:hover {
+  color: @FOREGROUND_MUTED;
+  background: transparent !important;
+}
+
+.focused {
+}
+
+input.input {
+  box-sizing: border-box;
+  padding: 6px 8px;
+  outline: none;
+  border: 1px solid @BORDER_COLOR;
+  transition: border-color .15s ease-out;
+}
+
+input.input:focus {
+  border-color: @BORDER_ACTIVE_COLOR;
+}
+
+input.input[disabled] {
+  background: @BACKGROUND;
+}
+
+textarea.input {
+  box-sizing: border-box;
+  padding: 6px 8px;
+  outline: none;
+  border: 1px solid @BORDER_COLOR;
+  transition: border-color .15s ease-out;
+}
+
+textarea.input:focus {
+  border-color: @BORDER_ACTIVE_COLOR;
+}
+
+textarea.input[disabled] {
+  background: @BACKGROUND;
+}
+
+
+input[type=text].input-transparent,
+textarea.input-transparent {
+  box-sizing: border-box;
+  width: 100%;
+  background: transparent;
+  border: none;
+
+  color: inherit;
+  text-overflow: ellipsis;
+  outline: none;
+
+  resize: none;
+
+  transition: border-color .2s ease-out;
+}
+
+input[type=text].input-transparent {
+  padding: 4px 0;
+}
+
+textarea.input-transparent {
+  padding: 0 4px;
+}
+
+input[type=url].input:invalid,
+input[type=text].input:invalid {
+  border-color: @IMPORTANT;
+}
+
+input[type=text].input-transparent:focus,
+textarea.input-transparent:focus {
+  text-overflow: initial;
+}
+
+.hovered {
+  transition: opacity .15s ease-out;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.hovered:hover {
+  opacity: 0.9;
+}
+
+.hoverable {
+
+}
+
+.show-on-hover {
+
+}
+
+.hoverable .show-on-hover {
+  display: none;
+}
+
+.hoverable:hover .show-on-hover {
+  display: block;
+}

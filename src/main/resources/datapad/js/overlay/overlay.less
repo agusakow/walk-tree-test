@@ -1,0 +1,34 @@
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: #fff;
+  z-index: 1;
+
+  &_content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: 6px;
+    transform: translate(-50%, -50%);
+  }
+
+  &_text {
+    color: @FOREGROUND_PALE;
+    margin-left: 12px;
+  }
+
+  &_text,
+  & .spinner {
+    vertical-align: middle;
+  }
+
+  & .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}

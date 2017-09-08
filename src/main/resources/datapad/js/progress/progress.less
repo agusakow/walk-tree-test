@@ -1,0 +1,77 @@
+.progress {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  background: #c1d7e0;
+  overflow: hidden;
+
+  &_runner2,
+  &_runner1 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: @COLOR_ACTION_2;
+  }
+
+  &_runner1 {
+    .keyframes-m(progress-scale-1; { 0% {
+      .transform(scaleX(0.1));
+      .animation-timing-function(linear);
+    } 36.6% {
+        .transform(scaleX(0.1));
+        .animation-timing-function(cubic-bezier(0.33473, 0.12482, 0.78584, 1));
+      } 69.15% {
+          .transform(scaleX(0.83));
+          .animation-timing-function(cubic-bezier(0.22573, 0, 0.23365, 1.37098));
+        } 100% {
+            .transform(scaleX(0.1));
+          } });
+
+    .keyframes-m(progress-linear-1; { 0% {
+      left: -105.16667%;
+      .animation-timing-function(linear);
+    } 20% {
+        left: -105.16667%;
+        .animation-timing-function(cubic-bezier(0.5, 0, 0.70173, 0.49582))
+      } 69.15% {
+          left: 21.5%;
+          .animation-timing-function(cubic-bezier(0.30244, 0.38135, 0.55, 0.95635));
+        } 100% {
+            left: 95.44444%;
+          } });
+
+    .animation(progress-scale-1 4s infinite, progress-linear-1 4s infinite);
+  }
+
+  &_runner2 {
+    .keyframes-m(progress-scale-2; { 0% {
+      .transform(scaleX(0.1));
+      .animation-timing-function(cubic-bezier(0.20503, 0.05705, 0.57661, 0.45397));
+    } 19.15% {
+        .transform(scaleX(0.57));
+        .animation-timing-function(cubic-bezier(0.15231, 0.19643, 0.64837, 1.00432));
+      } 44.15% {
+          .transform(scaleX(0.91));
+          .animation-timing-function(cubic-bezier(0.25776, -0.00316, 0.21176, 1.38179));
+        } 100% {
+            .transform(scaleX(0.1));
+          } });
+
+    .keyframes-m(progress-linear-2; { 0% {
+      left: -54.88889%;
+      .animation-timing-function(cubic-bezier(0.15, 0, 0.51506, 0.40968));
+    } 25% {
+        left: -17.25%;
+        .animation-timing-function(cubic-bezier(0.31033, 0.28406, 0.8, 0.73372));
+      } 48.35% {
+          left: 29.5%;
+          .animation-timing-function(cubic-bezier(0.4, 0.62703, 0.6, 0.90203));
+        } 100% {
+            left: 117.38889%;
+          } });
+
+    .animation(progress-scale-2 4s infinite, progress-linear-2 4s infinite);
+  }
+}

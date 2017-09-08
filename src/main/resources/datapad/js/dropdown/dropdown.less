@@ -1,0 +1,34 @@
+@MAX_HEIGHT: @LIST_ITEM_HEIGHT * 10;
+
+.dropdown {
+  &-opened {
+  }
+
+  &_popup {
+    max-height: @MAX_HEIGHT;
+    overflow: auto;
+  }
+
+  &_item {
+    display: block;
+    padding: 0 10px;
+    height: @LIST_ITEM_HEIGHT;
+    line-height: @LIST_ITEM_HEIGHT;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &_item:hover,
+  &_item:focus,
+  &_item.focused,
+  &_item.selected {
+    background: @BACKGROUND;
+  }
+
+  &_item-disabled {
+    color: @FOREGROUND_PALE_2;
+  }
+}

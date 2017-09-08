@@ -1,0 +1,78 @@
+.feedback-container {
+  background-color: rgba(101, 190, 65, 0.6);
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  .bg("envelope");
+  background-size: ~'calc(100% - 10px)';
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 10px;
+  transition: 0.5s all;
+
+  position: absolute;
+  bottom: 55px;
+  right: 2px;
+  z-index: 1099;
+
+  &:hover {
+    background-size: ~'calc(100% - 5px)';
+    background-color: rgba(101, 190, 65, 1);
+    transition: 0.5s all;
+  }
+
+  .is-fsrootmapper > & {
+      bottom: 0;
+  }
+}
+
+.feedback-shortmessage {
+  float: left;
+
+
+  &.is-ok .feedback-shortmessage-less,
+  &.is-ok .feedback-shortmessage-more {
+    display: none;
+  }
+
+  &.is-less .feedback-shortmessage-ok,
+  &.is-less .feedback-shortmessage-more {
+    display: none;
+  }
+
+  &.is-more .feedback-shortmessage-less,
+  &.is-more .feedback-shortmessage-ok {
+    display: none;
+  }
+}
+
+.feedback-popup {
+  min-height: 280px;
+  margin-top: 10px;
+
+  input {
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    margin-bottom: 2px;
+  }
+
+  input, textarea {
+    display: block;
+    min-width: 400px;
+  }
+
+  textarea {
+    height: 220px;
+  }
+
+  button {
+    float: right;
+    margin-top: 5px;
+  }
+}
+
+.feedback-link {
+  margin-bottom: 5px;
+}
