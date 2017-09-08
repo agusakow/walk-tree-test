@@ -42,32 +42,11 @@ public class Imports {
       return result;
     }
 
-    List<Path> localDirFiles = new ArrayList<>();
     Files.walkFileTree(dir, new SimpleFileVisitor<Path>() {
-      @Override
-      public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
-        logger.info("post visit:" + dir);
-        return super.postVisitDirectory(dir, exc);
-      }
-
-      @Override
-      public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
-        if (localDirFiles.size() > 0) {
-          localDirFiles.sort(Comparator.comparing(Path::getFileName));
-          localDirFiles.forEach(file -> {
-            logger.info("add file:" + file);
-            result.add(file);
-          });
-          localDirFiles.clear();
-        }
-        logger.info("pre visit:" + dir);
-        return super.preVisitDirectory(dir, attrs);
-      }
-
       @Override
       public FileVisitResult visitFile(Path path, BasicFileAttributes attrs) throws IOException {
         if (matcher.matches(dir.relativize(path))) {
-          localDirFiles.add(path);
+          result.add(path);
         }
         return FileVisitResult.CONTINUE;
       }
@@ -77,6 +56,8 @@ public class Imports {
         return FileVisitResult.CONTINUE;
       }
     });
+
+    result.sort(Comparator.comparing(Path::getFileName));
     return result;
   }
 }
